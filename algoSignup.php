@@ -27,10 +27,12 @@ try
       }
       else {
         $MessagePassEquals = "Les mots de passe de correspondent pas !";
+        header('location: signup.php');
       }
     }
     else {
       $MessageLoginExiste = "Ce login est déja utilisé !";
+      header('location: signup.php');
     }
   }
 

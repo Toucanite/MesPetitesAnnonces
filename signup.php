@@ -8,50 +8,36 @@ require 'algoSignup.php';
     <title>Page d'inscription</title>
   </head>
   <body>
-    <form action="#" method="POST">
-          <table>
-              <tr>
-                  <td>
-                      Créer un login :
-                  </td>
-                  <td>
-                      <input type="text" name="login" required="required" value=""/>
-                  </td>
-                  <td>
-                      <?php
-                          echo "<a style='color: red'>".$MessageLoginExiste."</a>";
-                      ?>
-                  </td>
-              </tr>
-              <tr>
-                  <td>
-                      Créer un mot de passe :
-                  </td>
-                  <td>
-                      <input type="password" name="pass" required="required"/>
-                  </td>
-              </tr>
-              <tr>
-                  <td>
-                      Confirmer le mot de passe :
-                  </td>
-                  <td>
-                      <input type="password" name="pass1" required="required"/>
-                  </td>
-                  <td>
-                      <?php
-                          echo "<a style='color: red'>".$MessagePassEquals."</a>";
-                      ?>
-                  </td>
-              </tr>
-              <tr>
-                  <td></td>
-                  <td>
-                      <input type="submit" value="Signup" name="btnSubmit"/>
-                  </td>
-              </tr>
+      <div class="jumbotron">
+        <table>
+          <tr>
+            <td>
+              <h3><label class="mr-sm-2" for="formulaire">S'inscrire</label></h3>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <form class="form-inline" action="algoSignup.php" method="POST">
 
-          </table>
-      </form>
+                <div class="form-group" id="formulaire">
+                  <label class="mr-sm-2" for="inlineFormInput">Login :</label>
+                  <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Login" name="login" required="required" value="<?php echo $login ?>">
+
+                  <label class="mr-sm-2" for="inlineFormInputGroup">Password :</label>
+                  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                      <input type="password" class="form-control" name="pass" required="required" id="inlineFormInputGroup">
+                  </div>
+                  <label class="mr-sm-2" for="inlineFormInputGroup">Confirm :</label>
+                  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                      <input type="password" class="form-control" name="pass1" required="required" id="inlineFormInputGroup">
+                  </div>
+
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
+            </td>
+          </tr>
+        </table>
+      </div>
   </body>
 </html>

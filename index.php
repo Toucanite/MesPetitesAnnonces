@@ -26,7 +26,7 @@ require 'connect.php';
 
                 <label class="mr-sm-2" for="inlineFormInputGroup">Password :</label>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                    <input type="password" id="example-password-input" class="form-control" name="pass" required="required" id="inlineFormInputGroup">
+                    <input type="password" class="form-control" name="pass" required="required" id="inlineFormInputGroup">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>
