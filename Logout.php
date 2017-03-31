@@ -2,6 +2,7 @@
 session_start();
 session_destroy();
 header('location: index.php');
+
 ?>
 <!doctype html>
 <html lang="fr">
