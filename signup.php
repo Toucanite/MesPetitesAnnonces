@@ -1,11 +1,12 @@
 <?php
-require 'algoSignup.php';
+require 'connect.php';
 ?>
 <!doctype html>
 <html lang="fr">
   <head>
     <meta charset="utf-8">
     <title>Page d'inscription</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
   </head>
   <body>
       <div class="jumbotron">

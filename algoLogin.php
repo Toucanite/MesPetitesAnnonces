@@ -10,10 +10,9 @@ try
                $_SESSION["login"] = $login;
                header("location: home.php");
            }
-   }
-   if ($login != "") {
-     $MessageErreurPass = "Mot de passe incorrect !";
-     header("location: index.php");
+           else {
+             header("location: index.php");
+           }
    }
 }
 catch (PDOException $e)
