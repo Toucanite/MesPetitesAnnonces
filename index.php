@@ -1,36 +1,5 @@
 ﻿<?php
-session_start(); //Démarre la session
-
-$bdd = new PDO('mysql:host=localhost;dbname=mydb', "root", ""); //Se conncecte à la base de donnée
-
-
-$loginTest = (isset($_REQUEST["login"])?$_REQUEST["login"]:""); // Stockage de la réponse de l'utilisateur pour le login
-$passTest = (isset($_REQUEST["pass"])?$_REQUEST["pass"]:""); // Stockage de la réponse de l'utilisateur pour le pass
-
-$MessageErreurLogin = "";
-$MessageErreurPass = "";
-$AlertTentative = "";
-
-try
-{
-  $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $verif = "SELECT Id_User, Nm_Last, Txt_Password_Hash, Txt_Password_Salt FROM tbl_user WHERE Nm_Last='$loginTest'";
-  foreach ($bdd->query($verif) as $i) {
-           if (strcmp(sha1($passTest . $i['Txt_Password_Salt']), $i['Txt_Password_Hash']) == 0) {
-               $_SESSION["login"] = $loginTest;
-               header("location: home.php");
-           }
-   }
-   if ($loginTest != "") {
-     $MessageErreurPass = "Mot de passe incorrect !";
-   }
-}
-catch (PDOException $e)
-{
-  echo "err" . $e->getMessage();
-}
-
-
+require_once 'algoLogin.php';
 ?>
 <!doctype html>
 <html lang="fr">
