@@ -12,30 +12,32 @@ Acces();
   <body>
     <div>
       <p>Bienvenue Monsieur <?php echo $_SESSION["login"]?></p>
-      <a href="Logout.php">Déconnexion</a>
+      <ul class="nav nav-pills">
+        <li role="presentation"><a href="Logout.php"><button type="button" class="btn btn-default">Déconnexion</button></a></li>
+      </ul>
       <form class="" action="" method="post">
         <div class="form-group">
           <label for="title">Titre</label>
-          <input type="text" class="form-control" id="title" placeholder="Enter title">
+          <input type="text" name="titre" class="form-control" id="title" placeholder="Enter title" required="required">
         </div>
         <div class="form-group">
           <label for="description">Description</label>
-          <textarea class="form-control" id="description" rows="10"></textarea>
+          <textarea class="form-control" name="description" id="description" rows="10" required="required"></textarea>
         </div>
         <div class="form-group">
           <label for="prix">Prix</label>
-          <input type="number" class="form-control" id="prix">
+          <input type="number" name="prix" class="form-control" id="prix" required="required">
         </div>
         <label for="currency">Currency</label>
-        <select class="form-control" id="currency">
-        			<optgroup label="Base Currency">
-        				<option value="CHF" selected="selected">Swiss Franc (CHF)</option>
-        			</optgroup>
-        		  <optgroup label="Major">
-                <option value="EUR">Euros (EUR)</option>
-        		    <option value="USD">US Dollars (USD)</option>
-        		  </optgroup>
-        		</select>
+        <select class="form-control" name="currency" id="currency" required="required">
+        	<optgroup label="Base Currency">
+        		<option value="CHF" selected="selected">Swiss Franc (CHF)</option>
+        	</optgroup>
+        	<optgroup label="Major">
+            <option value="EUR">Euros (EUR)</option>
+        		<option value="USD">US Dollars (USD)</option>
+        	</optgroup>
+        </select>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
