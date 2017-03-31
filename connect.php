@@ -12,4 +12,11 @@ $MessageLoginExiste = "";
 $MessagePassEquals = "";
 
 $bdd = new PDO('mysql:host=localhost;dbname=mydb', "root", ""); //Se conncecte à la base de donnée
+
+function Acces()
+{
+  if (!isset($_SESSION['login'])) {
+    header('location: index.php');
+  }
+}
 ?>
