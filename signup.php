@@ -38,6 +38,16 @@ require 'connect.php';
               </form>
             </td>
           </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+            <td>
+              <ul class="nav nav-pills">
+                <li role="presentation"><a href="index.php"><button type="button" class="btn btn-default">Se Connecter</button></a></li>
+              </ul>
+            </td>
+          </tr>
         </table>
       </div>
   </body>
