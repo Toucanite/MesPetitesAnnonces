@@ -1,5 +1,5 @@
 <?php
-require_once 'algoSignup.php';
+require 'algoSignup.php';
 ?>
 <!doctype html>
 <html lang="fr">
