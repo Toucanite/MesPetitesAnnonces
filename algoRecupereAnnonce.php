@@ -2,7 +2,7 @@
 require_once 'connect.php';
 Acces();
 
-$listAnnonce = array(array("titre","description","prix","currency","category"));
+$listAnnonce = array(array());
 
 try
 {

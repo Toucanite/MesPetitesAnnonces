@@ -16,15 +16,15 @@ try
            $idUser = $i['Id_User'];
    }
    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-   $ins = $bdd->prepare('INSERT INTO tbl_ad (Txt_Title, Txt_Description, Nb_Price, Cd_Ccy, Id_User) VALUES("'.$titre.'", "'.$description.'", "'.$prix.'", "'.$currency.'", "'.$idUser.'")');
-   $ins->execute();
+   $insert = $bdd->prepare('INSERT INTO tbl_ad (Txt_Title, Txt_Description, Nb_Price, Cd_Ccy, Id_User) VALUES("'.$titre.'", "'.$description.'", "'.$prix.'", "'.$currency.'", "'.$idUser.'")');
+   $insert->execute();
 
    $request = "SELECT Id_Ad FROM tbl_ad WHERE Id_User='$idUser' AND Txt_Title ='$titre' AND Txt_Description='$description'";
    foreach ($bdd->query($request) as $i) {
             $idAd = $i['Id_Ad'];
     }
-    $ins = $bdd->prepare('INSERT INTO tbl_ad-cat (Tbl_Ad_Id_Ad, Tbl_Category_id_Category) VALUES("'.$Id_Ad.'", "'.$category.'")');
-    $ins->execute();
+    $insert = $bdd->prepare('INSERT INTO tbl_ad-cat (Tbl_Ad_Id_Ad, Tbl_Category_id_Category) VALUES("'.$Id_Ad.'", "'.$category.'")');
+    $insert->execute();
 
 
 }
