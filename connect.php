@@ -5,6 +5,7 @@ $login = (isset($_REQUEST["login"])?$_REQUEST["login"]:"");
 $pass = (isset($_REQUEST["pass"])?$_REQUEST["pass"]:"");
 $pass1 = (isset($_REQUEST["pass1"])?$_REQUEST["pass1"]:"");
 
+$MessageErreur = "";
 $MessageErreurLogin = "";
 $MessageErreurPass = "";
 $AlertTentative = "";

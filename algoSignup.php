@@ -24,15 +24,15 @@ try
         $ins = $bdd->prepare('INSERT INTO tbl_user (Nm_Last, Txt_Password_Hash, Txt_Password_Salt) VALUES("'.$login.'", "'. sha1($pass.$salt) .'", "'.$salt.'")');
         $ins->execute();
         $_SESSION["login"] = $login;
-        header('location: home.php');
+        header('location: pageAnnonce.php');
       }
       else {
-        $MessagePassEquals = "Les mots de passe de correspondent pas !";
+        $MessageErreur = "Les mots de passe de correspondent pas !";
         header('location: signup.php');
       }
     }
     else {
-      $MessageLoginExiste = "Ce login est déja utilisé !";
+      $MessageErreur = "Ce login est déja utilisé !";
       header('location: signup.php');
     }
   }

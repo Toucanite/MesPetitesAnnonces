@@ -15,6 +15,11 @@ require 'connect.php';
           <td>
             <h3><label class="mr-sm-2" for="formulaire">Se connecter</label></h3>
           </td>
+          <td>
+            <?php echo '<div class="alert alert-danger" role="alert">
+                          <strong>Oops!</strong>'.$MessageErreur.'
+                        </div>' ?>
+          </td>
         </tr>
         <tr>
           <td>
