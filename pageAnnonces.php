@@ -1,7 +1,6 @@
 <?php
-require 'connect.php';
-Acces();
 require 'algoRecupereAnnonce.php';
+Acces();
 ?>
 <!doctype html>
 <html lang="fr">

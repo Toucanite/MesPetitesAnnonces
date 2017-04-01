@@ -6,7 +6,8 @@ $titre = $_REQUEST["titre"];
 $description = $_REQUEST["description"];
 $prix = $_REQUEST["prix"];
 $currency = $_REQUEST["currency"];
-$category = $_REQUEST["category"]
+$category = $_REQUEST["category"];
+$idUser = "";
 
 try
 {
@@ -15,7 +16,7 @@ try
            $idUser = $i['Id_User'];
    }
    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-   $ins = $bdd->prepare('INSERT INTO tbl_ad (Txt_Title, Txt_Description, Nb_Price, Cd_Ccy, Id_User) VALUES("'.$titre.'", "'.$description.'", "'.$prix.'", "'$currency'", "'.$idUser.'")');
+   $ins = $bdd->prepare('INSERT INTO tbl_ad (Txt_Title, Txt_Description, Nb_Price, Cd_Ccy, Id_User) VALUES("'.$titre.'", "'.$description.'", "'.$prix.'", "'.$currency.'", "'.$idUser.'")');
    $ins->execute();
 
    $request = "SELECT Id_Ad FROM tbl_ad WHERE Id_User='$idUser' AND Txt_Title ='$titre' AND Txt_Description='$description'";

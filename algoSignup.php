@@ -2,6 +2,8 @@
 require 'connect.php';
 Acces();
 
+$_SESSION["messageErreur"] = "";
+
 try
 {
   if ($login != "" && $pass != "")
@@ -24,15 +26,15 @@ try
         $ins = $bdd->prepare('INSERT INTO tbl_user (Nm_Last, Txt_Password_Hash, Txt_Password_Salt) VALUES("'.$login.'", "'. sha1($pass.$salt) .'", "'.$salt.'")');
         $ins->execute();
         $_SESSION["login"] = $login;
-        header('location: pageAnnonce.php');
+        header('location: pageAnnonces.php');
       }
       else {
-        $MessageErreur = "Les mots de passe de correspondent pas !";
+        $_SESSION["messageErreur"] = "Les mots de passe de correspondent pas !";
         header('location: signup.php');
       }
     }
     else {
-      $MessageErreur = "Ce login est déja utilisé !";
+      $_SESSION["messageErreur"] = "Ce login est déja utilisé !";
       header('location: signup.php');
     }
   }

@@ -1,5 +1,5 @@
 <?php
-require 'connect.php';
+require_once 'connect.php';
 Acces();
 ?>
 <!doctype html>
@@ -14,9 +14,9 @@ Acces();
       <p>Bienvenue <?php echo $_SESSION["login"]?></p>
       <ul class="nav nav-pills">
         <li role="presentation"><a href="Logout.php"><button type="button" class="btn btn-default">Déconnexion</button></a></li>
-        <li role="presentation"><a href="pageAnnonce.php"><button type="button" class="btn btn-default">Voir les annonces</button></a></li>
+        <li role="presentation"><a href="pageAnnonces.php"><button type="button" class="btn btn-default">Voir les annonces</button></a></li>
       </ul>
-      <form class="" action="" method="post">
+      <form class="form" action="algoAjoutAnnonce.php" method="post">
         <div class="form-group">
           <label for="title">Titre</label>
           <input type="text" name="titre" class="form-control" id="title" placeholder="Enter title" required="required">
@@ -39,7 +39,8 @@ Acces();
         		<option value="USD">US Dollars (USD)</option>
         	</optgroup>
         </select>
-        <select name="category" class="from-control" required="required">
+        <label for="category">Categorie</label>
+        <select name="category" class="form-control" id="category" required="required">
           <option value="1">Animaux</option>
           <option value="2">Art - Antiquités</option>
           <option value="3">Automobiles</option>
@@ -50,26 +51,26 @@ Acces();
           <option value="8">Camping</option>
           <option value="9">Cinéma - DVD</option>
           <option value="10">Collections</option>
-          <option value="12">Divers</option>
-          <option value="13">Emploi</option>
-          <option value="14">Immobilier</option>
-          <option value="15">Informatique</option>
-          <option value="16">Jeux - Jouets</option>
-          <option value="17">Jeux vidéo</option>
-          <option value="18">Livres - BD - Revues</option>
-          <option value="19">Maison - Jardin - Bricolage</option>
-          <option value="20">Modélisme</option>
-          <option value="21">Motos - Scooters</option>
-          <option value="22">Musique - Instruments</option>
-          <option value="23">Nautisme</option>
-          <option value="24">Photo - Caméras</option>
-          <option value="25">PME Artisans Agriculteurs</option>
-          <option value="26">Sport - Loisirs</option>
-          <option value="27">Téléphonie</option>
-          <option value="28">TV - Son - Home cinema</option>
-          <option value="29">Vacances - Voyages</option>
-          <option value="30">Vêtements</option>
-          <option value="31">Vins - Gastronomie</option>
+          <option value="11">Divers</option>
+          <option value="12">Emploi</option>
+          <option value="13">Immobilier</option>
+          <option value="14">Informatique</option>
+          <option value="15">Jeux - Jouets</option>
+          <option value="16">Jeux vidéo</option>
+          <option value="17">Livres - BD - Revues</option>
+          <option value="18">Maison - Jardin - Bricolage</option>
+          <option value="19">Modélisme</option>
+          <option value="20">Motos - Scooters</option>
+          <option value="21">Musique - Instruments</option>
+          <option value="22">Nautisme</option>
+          <option value="23">Photo - Caméras</option>
+          <option value="24">PME Artisans Agriculteurs</option>
+          <option value="25">Sport - Loisirs</option>
+          <option value="26">Téléphonie</option>
+          <option value="27">TV - Son - Home cinema</option>
+          <option value="28">Vacances - Voyages</option>
+          <option value="29">Vêtements</option>
+          <option value="30">Vins - Gastronomie</option>
         </select>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>

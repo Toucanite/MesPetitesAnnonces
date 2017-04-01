@@ -15,15 +15,10 @@ require 'connect.php';
             <td>
               <h3><label class="mr-sm-2" for="formulaire">S'inscrire</label></h3>
             </td>
-            <td>
-              <?php echo '<div class="alert alert-danger" role="alert">
-                            <strong>Oops!</strong>'.$MessageErreur.'
-                          </div>' ?>
-            </td>
           </tr>
           <tr>
             <td>
-              <form class="form-inline" action="algoSignup.php" method="POST">
+              <form class="form-inline" action="algoSignup.php" method="POST" id="inscription" >
 
                 <div class="form-group" id="formulaire">
                   <label class="mr-sm-2" for="inlineFormInput">Login :</label>
@@ -38,9 +33,18 @@ require 'connect.php';
                       <input type="password" class="form-control" name="pass1" required="required" id="inlineFormInputGroup">
                   </div>
 
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" form="inscription" class="btn btn-primary">Submit</button>
                 </div>
               </form>
+            </td>
+            <td>
+              <?php
+              if ($messageErreur != "") {
+                echo '<div class="alert alert-danger" role="alert">
+                        <strong>Oops! </strong>'.$messageErreur.'
+                      </div>';
+              }
+              ?>
             </td>
           </tr>
           <tr>
@@ -48,9 +52,11 @@ require 'connect.php';
           </tr>
           <tr>
             <td>
-              <ul class="nav nav-pills">
-                <li role="presentation"><a href="index.php"><button type="button" class="btn btn-default">Se Connecter</button></a></li>
-              </ul>
+              <form class="" action="index.php" method="post" id="changePage">
+                <ul class="nav nav-pills">
+                  <li role="presentation"><button type="submit" name="supMessage" value="1" form="changePage" class="btn btn-default">Se Connecter</button></li>
+                </ul>
+              </form>
             </td>
           </tr>
         </table>
