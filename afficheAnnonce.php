@@ -1,4 +1,6 @@
 <?php
+require 'connect.php';
+Acces();
 
 foreach ($listAnnonce as $key => $value) {
   echo '<div class="card">

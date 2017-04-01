@@ -14,6 +14,7 @@ Acces();
       <p>Bienvenue <?php echo $_SESSION["login"]?></p>
       <ul class="nav nav-pills">
         <li role="presentation"><a href="Logout.php"><button type="button" class="btn btn-default">Déconnexion</button></a></li>
+        <li role="presentation"><a href="pageAnnonce.php"><button type="button" class="btn btn-default">Voir les annonces</button></a></li>
       </ul>
       <form class="" action="" method="post">
         <div class="form-group">

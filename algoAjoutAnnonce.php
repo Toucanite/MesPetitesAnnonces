@@ -1,5 +1,6 @@
 <?php
 require 'connect.php';
+Acces();
 
 $titre = $_REQUEST["titre"];
 $description = $_REQUEST["description"];
