@@ -21,7 +21,7 @@ require 'connect.php';
             <form class="form-inline" action="algoLogin.php" method="POST" id="connexion">
               <div class="form-group" id="formulaire">
                 <label class="mr-sm-2" for="inlineFormInput">Login :</label>
-                <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Login" name="login" required="required" value="<?php echo $login ?>">
+                <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" name="login" required="required" value="<?php echo $login ?>">
 
                 <label class="mr-sm-2" for="inlineFormInputGroup">Password :</label>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">

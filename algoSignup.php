@@ -26,6 +26,12 @@ try
         $insert = $bdd->prepare('INSERT INTO tbl_user (Nm_Last, Txt_Password_Hash, Txt_Password_Salt) VALUES("'.$login.'", "'. sha1($pass.$salt) .'", "'.$salt.'")');
         $insert->execute();
         $_SESSION["login"] = $login;
+
+        $request = "SELECT Id_User, Nm_Last, Txt_Password_Hash, Txt_Password_Salt FROM tbl_user WHERE Nm_Last='$login'";
+        foreach ($bdd->query($request) as $i) {
+            $_SESSION["id"] = $i["Id_User"];
+         }
+
         header('location: pageAnnonces.php');
       }
       else {

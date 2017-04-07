@@ -15,6 +15,7 @@ try
   foreach ($bdd->query($request) as $i) {
            if (strcmp(sha1($pass . $i['Txt_Password_Salt']), $i['Txt_Password_Hash']) == 0) {
                $_SESSION["login"] = $login;
+               $_SESSION["id"] = $i["Id_User"];
                header("location: pageAnnonces.php");
            }
            else {

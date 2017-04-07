@@ -7,13 +7,13 @@ $listAnnonce = array(array());
 try
 {
   $y=0;
-  $request = "SELECT Id_Ad, Txt_Title, Txt_Description, Nb_Price, Cd_Ccy, Nm_Category FROM tbl_Ad, tbl_ad-cat, tbl_category  WHERE Id_Ad=Tbl_Ad_Id_Ad AND id_Category=Tbl_Category_id_Category ORDER BY Id_Ad DESC";
+  $request = "SELECT * FROM tbl_ad as ad, tbl_user as us, `tbl_ad-cat` as ac, tbl_category as c WHERE ad.Id_User = us.Id_user AND ad.Id_Ad = ac.Tbl_Ad_Id_Ad AND ac.Tbl_Category_id_Category = c.id_Category";
   foreach ($bdd->query($request) as $i) {
-           $listAnnonce[$y]["titre"] = $i["a.Txt_Title"];
-           $listAnnonce[$y]["description"] = $i["a.Txt_Description"];
-           $listAnnonce[$y]["prix"] = $i["a.Nb_Price"];
-           $listAnnonce[$y]["currency"] = $i["a.Cd_Ccy"];
-           $listAnnonce[$y]["category"] = $i["c.Nm_Category"];
+           $listAnnonce[$y]["titre"] = $i["Txt_Title"];
+           $listAnnonce[$y]["description"] = $i["Txt_Description"];
+           $listAnnonce[$y]["prix"] = $i["Nb_Price"];
+           $listAnnonce[$y]["currency"] = $i["Cd_Ccy"];
+           $listAnnonce[$y]["category"] = $i["Nm_Category"];
            $y+=1;
    }
 }

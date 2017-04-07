@@ -1,6 +1,5 @@
 <?php
 require_once 'connect.php';
-Acces();
 
 foreach ($listAnnonce as $key => $value) {
   echo '<div class="card">
@@ -8,7 +7,7 @@ foreach ($listAnnonce as $key => $value) {
   <div class="card-block">
   <h4 class="card-title">'.$value["titre"].'</h4>
   <p class="card-text">'.$value["description"].'</p>
-  <p class="card-link">'.$value["prix"].$value["currency"].'</p>
+  <p class="card-link">'.$value["prix"].' '.$value["currency"].'</p>
   </div>
   </div>';
 }
