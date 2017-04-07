@@ -32,6 +32,16 @@ try
             $_SESSION["id"] = $i["Id_User"];
          }
 
+        $insertRole = $bdd->prepare('INSERT INTO `tbl_user-role` (Id_User, Id_Role, Dttm_Valid_From) VALUES(:id, :role, :dates)');
+
+        $insertRole->execute(array(
+          'id' => $_SESSION["id"],
+          'role' => 2,
+          'dates' => date("Y-m-d H:i:s")
+
+        ));
+
+
         header('location: pageAnnonces.php');
       }
       else {

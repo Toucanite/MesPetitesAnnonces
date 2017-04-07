@@ -19,7 +19,7 @@ Acces();
       <form class="form" action="algoAjoutAnnonce.php" method="post">
         <div class="form-group">
           <label for="title">Titre</label>
-          <input type="text" name="titre" class="form-control" id="title" placeholder="Enter title" required="required">
+          <input type="text" name="titre" class="form-control" id="title" required="required">
         </div>
         <div class="form-group">
           <label for="description">Description</label>
