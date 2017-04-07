@@ -14,6 +14,7 @@ try
            $listAnnonce[$y]["prix"] = $i["Nb_Price"];
            $listAnnonce[$y]["currency"] = $i["Cd_Ccy"];
            $listAnnonce[$y]["category"] = $i["Nm_Category"];
+           $listAnnonce[$y]["user"] = $i["Nm_Last"];
            $y+=1;
    }
 }

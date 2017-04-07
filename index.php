@@ -5,7 +5,7 @@ require 'connect.php';
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-    <title>Page d'accueil</title>
+    <title>Connexion</title>
     <link rel="stylesheet" href="css/bootstrap.css">
   </head>
   <body>
