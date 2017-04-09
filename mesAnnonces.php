@@ -15,7 +15,7 @@ Acces();
       <ul class="nav nav-pills">
         <li role="presentation"><a href="Logout.php"><button type="button" class="btn btn-default">Déconnexion</button></a></li>
         <li role="presentation"><a href="formAnnonce.php"><button type="button" class="btn btn-default">Faire une annonce</button></a></li>
-        <li role="presentation"><a href="mesAnnonces.php"><button type="button" class="btn btn-default">Voir mes annonce</button></a></li>
+        <li role="presentation"><a href="pageAnnonces.php"><button type="button" class="btn btn-default">Voir les annonce</button></a></li>
       </ul>
       <?php
       include 'afficheAnnonce.php';
